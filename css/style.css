@@ -2,7 +2,7 @@
    CSS Variables
    ============================================ */
 :root {
-	--color-primary: rgb(23, 120, 255);
+	--color-primary: rgb(208, 0, 0);
 	--color-primary-dark: rgb(13, 64, 135);
 	--color-dark: #222222;
 	--color-gray: #888888;
@@ -407,29 +407,98 @@ p {
 }
 
 /* ============================================
-   Footer
+   Enhanced Footer Styling
    ============================================ */
 .footer {
-	background: url(../img/pw_maze_black_2X.png) left top repeat;
-	padding: 35px 0;
+	background: #1a1a1a;
+	/* Darker, professional background */
+	color: #bbbbbb;
+	padding: 60px 0 0 0;
 }
 
-.copyright {
-	color: #cccccc;
-	font-size: 14px;
-	display: block;
-	text-align: center;
+.footer-grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding-bottom: 40px;
+	max-width: 1140px;
+	margin: 0 auto;
 }
 
-.copyright a {
-	color: var(--color-primary);
-	font-weight: 600;
+.footer-col {
+	flex: 0 0 22%;
+	margin-bottom: 30px;
+}
+
+.footer-logo {
+	width: 60px;
+	margin-bottom: 15px;
+	filter: brightness(0) invert(1);
+	/* Makes the logo white for the dark footer */
+}
+
+.footer-col h4 {
+	color: var(--color-white);
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+	position: relative;
+}
+
+.footer-col h4::after {
+	content: '';
+	width: 30px;
+	height: 2px;
+	background: var(--color-primary);
+	position: absolute;
+	bottom: -8px;
+	left: 0;
+}
+
+.footer-col ul {
+	list-style: none;
+	padding: 0;
+}
+
+.footer-col ul li {
+	margin-bottom: 10px;
+}
+
+.footer-col a {
+	color: #bbbbbb;
 	text-decoration: none;
 	transition: var(--transition);
 }
 
-.copyright a:hover {
-	color: var(--color-white);
+.footer-col a:hover {
+	color: var(--color-primary);
+	padding-left: 5px;
+}
+
+.footer-bottom {
+	background: #111111;
+	padding: 20px 0;
+	border-top: 1px solid #2a2a2a;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+	.footer-col {
+		flex: 0 0 45%;
+	}
+}
+
+@media (max-width: 480px) {
+	.footer-col {
+		flex: 0 0 100%;
+		text-align: center;
+	}
+
+	.footer-col h4::after {
+		left: 50%;
+		transform: translateX(-50%);
+	}
 }
 
 /* ============================================
@@ -469,6 +538,62 @@ p {
 	width: 100%;
 	object-fit: contain;
 	/* Keeps icons/images from distorting */
+}
+
+/* ============================================
+   Dropdown Navigation
+   ============================================ */
+.main-nav li {
+	position: relative;
+	/* Necessary for absolute positioning of the menu */
+}
+
+/* Hide the menu by default */
+.dropdown-menu {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background-color: var(--color-white);
+	min-width: 200px;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+	list-style: none;
+	padding: 10px 0;
+	z-index: 1000;
+	border-top: 2px solid var(--color-primary);
+	text-align: left;
+}
+
+/* Show menu on hover */
+.dropdown:hover .dropdown-menu {
+	display: block;
+}
+
+/* Style the dropdown links */
+.dropdown-menu li {
+	display: block;
+	margin: 0;
+}
+
+.dropdown-menu li a {
+	padding: 10px 20px !important;
+	margin: 0 !important;
+	display: block;
+	font-size: 13px;
+	text-transform: none;
+	/* Looks cleaner in dropdowns */
+	border-bottom: 1px solid #f5f5f5;
+}
+
+.dropdown-menu li a:hover {
+	background-color: var(--color-light);
+	color: var(--color-primary);
+}
+
+/* Caret icon spacing */
+.fa-caret-down {
+	margin-left: 5px;
+	font-size: 12px;
 }
 
 /* ============================================
