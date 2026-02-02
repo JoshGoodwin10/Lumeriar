@@ -22,6 +22,80 @@
    General
    ============================================ */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: var(--color-gray);
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+a,
+a:hover,
+a:active {
+    outline: 0px !important;
+}
+
+h2 {
+    font-size: 34px;
+    color: var(--color-dark);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin: 0 0 15px 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-dark);
+    font-size: 16px;
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+h6 {
+    font-size: 16px;
+    color: var(--color-gray);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 60px 0;
+}
+
+p {
+    line-height: 24px;
+    margin: 0;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: '\0020';
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+
 /* ============================================
     Header
     ============================================ */
@@ -85,6 +159,128 @@
 /* ============================================
    Footer
    ============================================ */
+
+/* ============================================
+   Hero
+   ============================================ */
+
+.hero {
+    text-align: center;
+    background: url(../images/background.png) left top repeat;
+    padding: 100px 0;
+}
+
+.heronoimage {
+    text-align: center;
+    font-size: x-large;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: var(--color-dark);
+    background-color: var(--color-primary);
+    vertical-align: middle;
+}
+
+.logo {
+    width: 130px;
+    margin: 0 auto 35px;
+}
+
+.link {
+    padding: 15px 35px;
+    background: var(--color-primary);
+    color: var(--color-white) !important;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    border-radius: 3px;
+    text-transform: uppercase;
+    line-height: 25px;
+    margin-bottom: 20px;
+    transition: var(--transition);
+}
+
+.link:hover {
+    text-decoration: none;
+    color: var(--color-primary) !important;
+    background: var(--color-white);
+}
+
+.link:active,
+.link:focus {
+    background: var(--color-primary);
+    text-decoration: none;
+    color: var(--color-white) !important;
+}
+
+.main-section {
+    padding: 90px 0 110px;
+    text-align: center;
+}
+
+.main-section.alabaster {
+    background: var(--color-light);
+}
+
+/* ============================================
+   Partners Section
+   ============================================ */
+
+.partners-section {
+    padding: 85px 0;
+    background: var(--color-white);
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.partner-card {
+    background-color: var(--color-light);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.partner-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.partner-image {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto var(--spacing-sm);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--color-primary);
+}
+
+.partner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.partner-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: var(--spacing-xs);
+}
+
+.partner-quote {
+    font-size: 0.9375rem;
+    color: var(--color-gray);
+    line-height: 1.6;
+    font-style: italic;
+}
 
 /* ============================================
     Buttons
