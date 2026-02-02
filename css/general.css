@@ -1,0 +1,99 @@
+/* ============================================
+   CSS Variables
+   ============================================ */
+:root {
+    --color-primary: rgb(208, 0, 0);
+    --color-primary-dark: rgb(13, 64, 135);
+    --color-dark: #222222;
+    --color-gray: #888888;
+    --color-light: #fafafa;
+    --color-white: #ffffff;
+    --color-gold: rgb(255, 189, 76);
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 6rem;
+    --border-radius: 8px;
+    --transition: all 0.3s ease-in-out;
+}
+
+/* ============================================
+   General
+   ============================================ */
+
+/* ============================================
+    Header
+    ============================================ */
+
+.header-outer {
+    padding: 0px;
+    border-bottom: 1px solid #dddddd;
+    box-shadow: 0 4px 5px -3px #ececec;
+    position: relative;
+    background: var(--color-white);
+}
+
+.header {
+    text-align: center;
+    margin: 10px 0 0px;
+    padding: 0;
+    list-style: none;
+}
+
+.header li {
+    display: inline;
+    margin: 0 1px;
+}
+
+.header li a {
+    display: inline-block;
+    color: var(--color-dark);
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    line-height: 20px;
+    margin: 17px 32px;
+    transition: var(--transition);
+}
+
+.header li a:hover {
+    text-decoration: none;
+    color: var(--color-primary);
+}
+
+.res-nav_click {
+    line-height: 38px;
+    font-family: 'FontAwesome';
+    font-size: 38px;
+    text-decoration: none !important;
+    color: #777777;
+    font-style: normal;
+    display: none;
+    width: 42px;
+    height: 27px;
+    margin: 20px auto;
+    transition: var(--transition);
+}
+
+.res-nav_click:hover,
+.res-nav_click:active,
+.res-nav_click:focus {
+    color: var(--color-primary) !important;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+
+/* ============================================
+    Buttons
+    ============================================ */
+
+/* ============================================
+   Rows
+   ============================================ */
+
+/* ============================================
+   Columns
+   ============================================ */
