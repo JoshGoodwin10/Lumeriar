@@ -178,6 +178,11 @@ p {
 	align-items: center;
 }
 
+.row.align-stretch {
+	align-items: stretch;
+	/* Makes columns equal height */
+}
+
 .row.justify-center {
 	justify-content: center;
 }
@@ -504,7 +509,7 @@ p {
    Sections
    ============================================ */
 .main-section {
-	padding: 90px 0 110px;
+	padding: 60px 0 60px;
 	text-align: center;
 }
 
@@ -566,12 +571,22 @@ p {
 	border-radius: var(--border-radius);
 	box-shadow: var(--shadow-md);
 	margin: 0 auto;
+	height: 100%;
 }
 
 .contact-map {
-	padding: 15px;
-	margin-top: 20px;
-	height: 350px;
+	overflow: hidden;
+	border-radius: 8px;
+	height: 100%;
+	min-height: 550px;
+}
+
+.contact-map iframe {
+	display: block;
+	width: 100%;
+	border: 0;
+	height: 100%;
+	min-height: 550px;
 }
 
 .contact-info-footer {
