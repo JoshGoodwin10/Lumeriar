@@ -2,8 +2,8 @@
    CSS Variables
    ============================================ */
 :root {
-	--color-primary: rgb(208, 0, 0);
-	--color-primary-dark: rgb(13, 64, 135);
+	--color-primary: rgb(255, 69, 0);
+	--color-primary-dark: rgb(228, 29, 0);
 	--color-dark: #222222;
 	--color-gray: #888888;
 	--color-light: #fafafa;
@@ -450,8 +450,8 @@ p {
    ============================================ */
 .hero {
 	text-align: center;
-	background: url(../images/Lumeriar\ Logo\ Hero.png) center center no-repeat;
-	background-size: cover;
+	background: url(../images/Lumeriar\ Logo\ New.png) center center no-repeat;
+	background-size: contain;
 	background-attachment: fixed;
 	padding: 100px 0;
 	min-height: 100vh;
