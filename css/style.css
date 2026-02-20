@@ -45,6 +45,7 @@ img {
 	width: 600px;
 	height: 600px;
 	object-fit: cover;
+	border-radius: var(--border-radius);
 }
 
 a,
