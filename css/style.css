@@ -74,6 +74,11 @@ h2 {
 	padding-bottom: 40px;
 	text-align: center;
 	text-transform: uppercase;
+	background: linear-gradient(to bottom, var(--color-secondary-dark), var(--color-secondary));
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	-webkit-text-fill-color: transparent;
 }
 
 h3 {
@@ -132,6 +137,23 @@ p {
 	max-width: var(--max-width);
 	margin: 0 auto;
 	padding: 0 15px;
+}
+
+.nav-wrap {
+	position: relative;
+}
+
+.nav-mobile-logo {
+	display: none;
+	text-decoration: none;
+}
+
+.nav-mobile-logo img {
+	display: block;
+	width: 100px;
+	height: 40px;
+	object-fit: cover;
+	border-radius: 0;
 }
 
 /* Text Alignment */
@@ -372,6 +394,7 @@ p {
 	box-shadow: 0 4px 5px -3px #ececec;
 	position: relative;
 	background: var(--color-white);
+	z-index: 1001;
 }
 
 .main-nav {
@@ -405,16 +428,15 @@ p {
 }
 
 .res-nav_click {
-	line-height: 38px;
-	font-family: 'FontAwesome';
-	font-size: 38px;
-	text-decoration: none !important;
-	color: #777777;
-	font-style: normal;
+	appearance: none;
+	background: transparent;
+	border: 0;
+	padding: 10px;
+	cursor: pointer;
 	display: none;
-	width: 42px;
-	height: 27px;
-	margin: 20px auto;
+	width: 48px;
+	height: 48px;
+	margin: 10px 0;
 	transition: var(--transition);
 }
 
@@ -422,6 +444,16 @@ p {
 .res-nav_click:active,
 .res-nav_click:focus {
 	color: var(--color-primary) !important;
+}
+
+.res-nav_click span {
+	display: block;
+	width: 24px;
+	height: 2px;
+	background: var(--color-dark);
+	margin: 5px auto;
+	border-radius: 2px;
+	transition: var(--transition);
 }
 
 /* Dropdown Navigation */
@@ -1000,6 +1032,18 @@ p {
 }
 
 @media (max-width: 768px) {
+	.nav-wrap {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.nav-mobile-logo {
+		display: block;
+		margin: 8px 0;
+	}
+
 	.main-nav {
 		display: none;
 		position: absolute;
@@ -1012,13 +1056,79 @@ p {
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 	}
 
-	.res-nav_click {
+	.main-nav.open {
 		display: flex;
+	}
+
+	.main-nav li {
+		display: block;
+		margin: 0;
+	}
+
+	.main-nav li a {
+		display: block;
+		margin: 0;
+		padding: 12px 16px;
+	}
+
+	.res-nav_click {
+		display: block;
+		align-self: auto;
+	}
+
+	.dropdown-menu {
+		position: static;
+		display: block;
+		min-width: 100%;
+		box-shadow: none;
+		border-top: none;
+		padding: 0 0 8px 0;
+		background: transparent;
+		text-align: center;
+	}
+
+	.dropdown-menu li a {
+		border-bottom: none;
+		padding: 8px 20px !important;
+		font-size: 12px;
 	}
 
 	.hero h1,
 	.heronoimage h1 {
 		font-size: 35px;
+	}
+
+	.hero {
+		background-image: url(../images/Lumeriar\ Logo\ New\ Logo\ Only.png);
+		background-attachment: scroll;
+		background-position: center 22%;
+		background-size: 76% auto;
+		min-height: 100svh;
+		padding: 30px 20px 20px 20px;
+	}
+
+	.hero .container {
+		min-height: calc(100svh - 100px);
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		align-items: center;
+		padding-bottom: 32px;
+	}
+
+	.hero .we-create {
+		margin: 0 0 12px 0 !important;
+		padding-top: 0;
+	}
+
+	.hero .we-create h2 {
+		font-size: 28px;
+		line-height: 1.1;
+		padding-bottom: 0;
+	}
+
+	.hero .servicelink {
+		margin-top: 16px !important;
 	}
 
 	.col-2,
