@@ -102,6 +102,15 @@ h1 {
 	-webkit-text-fill-color: transparent;
 }
 
+h1.alternate {
+	font-family: 'Montserrat', sans-serif;
+	background: linear-gradient(to bottom, var(--color-secondary-dark), var(--color-secondary));
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	-webkit-text-fill-color: transparent;
+}
+
 h6 {
 	font-size: 16px;
 	color: var(--color-gray);
@@ -632,6 +641,15 @@ p {
 	height: 100%;
 }
 
+.contact-form iframe {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 600px;
+	height: 100vh;
+	border: 0;
+}
+
 .contact-map {
 	overflow: hidden;
 	border-radius: 8px;
@@ -1141,6 +1159,16 @@ p {
 	.contact-map {
 		margin-top: 20px;
 		height: 350px;
+	}
+
+	.contact-form {
+		margin-top: 20px;
+		height: 350px;
+	}
+
+	.contact-form iframe {
+		width: 70vw;
+		height: 300px;
 	}
 
 	.footer-col {
