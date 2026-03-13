@@ -54,19 +54,60 @@
         </div>
     </nav>
 
+    <!-- Announcement Banner -->
+    <div class="announcement-banner" id="announcementBanner">
+        <div class="banner-track">
+            <div class="banner-slides" id="bannerSlides">
+
+                <div class="banner-slide active">
+                    <span class="banner-tag">🏆 Event</span>
+                    <span class="banner-text">Regional Robotics Competition — Durban, 15 April 2026. <a
+                            href="/pages/clubs.html">Enter your team →</a></span>
+                </div>
+
+                <div class="banner-slide">
+                    <span class="banner-tag">📋 New</span>
+                    <span class="banner-text">Grade R–3 curriculum now available for Term 2. <a
+                            href="/pages/curriculums.html">View curriculum →</a></span>
+                </div>
+
+                <div class="banner-slide">
+                    <span class="banner-tag">🎓 Training</span>
+                    <span class="banner-text">Teacher development workshop — Cape Town, 22 March 2026. <a
+                            href="/pages/teacherdevelopment.html">Register now →</a></span>
+                </div>
+
+                <div class="banner-slide">
+                    <span class="banner-tag">📣 News</span>
+                    <span class="banner-text">Follow us on social media!<a href="/pages/about.html">Read more
+                            →</a></span>
+                </div>
+
+            </div>
+
+            <div class="banner-controls">
+                <button class="banner-btn" id="bannerPrev" aria-label="Previous announcement">&#8249;</button>
+                <div class="banner-dots" id="bannerDots"></div>
+                <button class="banner-btn" id="bannerNext" aria-label="Next announcement">&#8250;</button>
+            </div>
+        </div>
+    </div>
+
+
     <!-- Hero -->
     <header class="hero" id="hero">
         <div class="container">
             <!-- <h1 class="animated fadeInDown delay-07s">Lumeriar Robotics</h1>-->
             <div class="we-create animated fadeInUp delay-1s" style="margin-top: 30vh;">
 
-                <h1 class="alternate animated fadeInUp delay-1s">
-                    Shaping Future Innovators</h1>
+                <h2 class="alternate animated fadeInUp delay-1s">
+                    Shaping Future Innovators</h2>
             </div>
-            <a class="btn animated fadeInUp delay-1s servicelink" style="margin-top: 50px;" href="#services">See what
+            <a class="btn animated fadeInUp delay-1s servicelink" href="#services">See what
                 we offer!</a>
         </div>
     </header>
+
 
     <!-- Services Section -->
     <section class="main-section" id="services">
@@ -305,6 +346,40 @@
                 }
             });
         });
+
+        (function () {
+            var slides = document.querySelectorAll('.banner-slide');
+            var dotsContainer = document.getElementById('bannerDots');
+            var current = 0;
+            var timer;
+
+            // Build dots
+            slides.forEach(function (_, i) {
+                var dot = document.createElement('button');
+                dot.className = 'banner-dot' + (i === 0 ? ' active' : '');
+                dot.setAttribute('aria-label', 'Go to announcement ' + (i + 1));
+                dot.addEventListener('click', function () { goTo(i); resetTimer(); });
+                dotsContainer.appendChild(dot);
+            });
+
+            function goTo(n) {
+                slides[current].classList.remove('active');
+                dotsContainer.children[current].classList.remove('active');
+                current = (n + slides.length) % slides.length;
+                slides[current].classList.add('active');
+                dotsContainer.children[current].classList.add('active');
+            }
+
+            function resetTimer() {
+                clearInterval(timer);
+                timer = setInterval(function () { goTo(current + 1); }, 5000);
+            }
+
+            document.getElementById('bannerNext').addEventListener('click', function () { goTo(current + 1); resetTimer(); });
+            document.getElementById('bannerPrev').addEventListener('click', function () { goTo(current - 1); resetTimer(); });
+
+            resetTimer();
+        })();
     </script>
 
 </body>

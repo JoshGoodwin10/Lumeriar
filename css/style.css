@@ -1033,6 +1033,171 @@ p {
 	-webkit-animation-delay: 1.2s;
 }
 
+.announcement-banner {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	background: linear-gradient(90deg, var(--color-secondary-dark) 0%, rgb(8, 60, 140) 50%, var(--color-secondary-dark) 100%);
+	color: #fff;
+	overflow: hidden;
+	box-shadow: 0 2px 12px rgba(8, 38, 102, 0.18);
+}
+
+.banner-track {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	max-width: var(--max-width);
+	margin: 0 auto;
+	padding: 0 15px;
+	height: 42px;
+	gap: 12px;
+}
+
+.banner-slides {
+	flex: 1;
+	overflow: hidden;
+	position: relative;
+	height: 100%;
+}
+
+.banner-slide {
+	display: none;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	gap: 10px;
+	animation: bannerFadeIn 0.4s ease;
+}
+
+.banner-slide.active {
+	display: flex;
+}
+
+@keyframes bannerFadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(6px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.banner-tag {
+	background: var(--color-primary);
+	color: #fff;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 10px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	padding: 3px 9px;
+	border-radius: 20px;
+	white-space: nowrap;
+	flex-shrink: 0;
+}
+
+.banner-text {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13px;
+	color: rgba(255, 255, 255, 0.92);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.banner-text a {
+	color: var(--color-gold);
+	text-decoration: underline;
+	text-underline-offset: 2px;
+	font-weight: 600;
+}
+
+.banner-text a:hover {
+	color: #fff;
+}
+
+.banner-controls {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	flex-shrink: 0;
+}
+
+.banner-btn {
+	background: rgba(255, 255, 255, 0.12);
+	border: 1px solid rgba(255, 255, 255, 0.25);
+	color: #fff;
+	width: 26px;
+	height: 26px;
+	border-radius: 50%;
+	cursor: pointer;
+	font-size: 13px;
+	line-height: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.2s ease;
+	padding: 0;
+}
+
+.banner-btn:hover {
+	background: rgba(255, 255, 255, 0.25);
+	border-color: rgba(255, 255, 255, 0.5);
+}
+
+.banner-dots {
+	display: flex;
+	gap: 5px;
+	align-items: center;
+}
+
+.banner-dot {
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.35);
+	cursor: pointer;
+	transition: all 0.2s ease;
+	border: none;
+	padding: 0;
+}
+
+.banner-dot.active {
+	background: var(--color-gold);
+	width: 16px;
+	border-radius: 3px;
+}
+
+.banner-close {
+	background: transparent;
+	border: none;
+	color: rgba(255, 255, 255, 0.5);
+	font-size: 18px;
+	cursor: pointer;
+	line-height: 1;
+	padding: 0 0 0 4px;
+	transition: color 0.2s ease;
+	flex-shrink: 0;
+}
+
+.banner-close:hover {
+	color: #fff;
+}
+
+@media (max-width: 600px) {
+	.banner-text {
+		font-size: 11.5px;
+	}
+
+	.banner-tag {
+		display: none;
+	}
+}
+
 /* ============================================
    RESPONSIVE DESIGN (Consolidated)
    ============================================ */
